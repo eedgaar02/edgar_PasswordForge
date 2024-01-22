@@ -15,6 +15,26 @@
 /* ******************************** */
 
 /* Colores */
+:root {
+  /* Mode 1 */
+  /* colors */
+  --azul-flojo-dark: #5ab3b0;
+  --azul-flojo-light: #eaf5f5;
+  
+  --azul-claro-dark: #489d8e;
+  --azul-claro-light: #dcefed;
+  
+  --azul-intermedio-dark: #408c84;
+  --azul-intermedio-light: #c0e2dd;
+  
+  --azul-oscuro-dark: #234d46;
+  --azul-oscuro-light: #5ab3b0;
+  
+  --azul-fuerte-dark: #1a3836;
+  --azul-fuerte-light: #326c62;
+}
+
+
 
 /* ******************************** */
 
