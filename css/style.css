@@ -8,8 +8,8 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+  font-family: "Luxurious Roman";
+  src: url("../font/LuxuriousRoman-Regular.woff2") format("woff2"), url("../font/LuxuriousRoman-Regular.woff") format("woff");
 }
 
 /* ******************************** */
@@ -17,3 +17,11 @@
 /* Colores */
 
 /* ******************************** */
+
+html{
+  font-family: "Luxurious Roman";
+}
+body{
+  width: 100vw;
+  height: 100vh;
+}
