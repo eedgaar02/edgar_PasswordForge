@@ -94,3 +94,12 @@ body{
 .botones_pass{
   display: flex;
 }
+
+.que_es{
+  display: flex;
+  justify-content: center;
+}
+.subsection{
+  display: flex;
+  flex-direction: column;
+}
