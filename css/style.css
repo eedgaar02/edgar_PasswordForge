@@ -52,7 +52,7 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #f2f2f2; /* Cambia el color de fondo según tus preferencias */
+  background-color: #f2f2f2;
   width: 100vw;
   height: 10vh;
 }
@@ -63,7 +63,7 @@ body{
 
 .Logo {
   display: block;
-  margin: 0 auto; /* Centra la imagen horizontalmente */
+  margin: 0 auto;
 }
 
 .botones {
@@ -72,8 +72,25 @@ body{
 
 .btn_logIn,
 .btn_register {
-  margin-left: 10px; /* Ajusta el espaciado entre los botones según tus preferencias */
+  margin-left: 10px;
   text-decoration: none;
   padding: 8px 16px;
   color: #333;
+}
+
+.cuerpo{
+  height: 70vh;
+}
+
+.generador{
+  display: flex;  
+  justify-content: center;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+}
+
+.botones_pass{
+  display: flex;
 }
