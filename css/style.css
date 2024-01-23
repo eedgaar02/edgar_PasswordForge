@@ -47,6 +47,7 @@ body{
   margin: 0;
 }
 
+/*Etiqueta header*/
 .cabecera {
   display: flex;
   justify-content: space-between;
@@ -56,20 +57,16 @@ body{
   width: 100vw;
   height: 10vh;
 }
-
+/*Nombre del proyecto*/
 .password_forge {
   margin: 0;
 }
-
-.Logo {
-  display: block;
-  margin: 0 auto;
-}
-
+/*Section que almacena las etiquetas de los botones*/
 .botones {
   display: flex;
 }
 
+/*Boton de log in y register*/
 .btn_logIn,
 .btn_register {
   margin-left: 10px;
@@ -78,28 +75,55 @@ body{
   color: #333;
 }
 
+/*Etiqueta main  del cuerpo de la página*/
 .cuerpo{
+  width: 100vw;
   height: 70vh;
 }
 
+/*Section que almacena todas las etiquetas de la parte del generador*/
 .generador{
   display: flex;  
   justify-content: center;
 }
+/*Subsection que almacena el titulo, la zona de generado y un subsection de los botones*/
 .content{
   display: flex;
   flex-direction: column;
 }
-
+/*Subsection de los botones*/
 .botones_pass{
   display: flex;
 }
-
+/*Seccion que contiene las etiquetas del apartado que es*/
 .que_es{
   display: flex;
   justify-content: center;
 }
+/*Subseccion que almacena un h2 y una p*/
 .subsection{
   display: flex;
   flex-direction: column;
+}
+/*Imagen de la seccion que es*/
+.imagen{
+  width: 50vw;
+}
+/*Footer*/
+.pie{
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  padding: 20px;
+}
+/*Secciones que almacenan las etiquetas de los logos y los nombres de las redes sociales*/
+.redes_sociales,
+.iconos{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/*Imagen del logo*/
+.logo{
+  order: -1;
 }
