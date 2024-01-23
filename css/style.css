@@ -32,6 +32,8 @@
   
   --azul-fuerte-dark: #1a3836;
   --azul-fuerte-light: #326c62;
+
+  --blanco: #fff;
 }
 
 
@@ -59,7 +61,14 @@ body{
 }
 /*Nombre del proyecto*/
 .password_forge {
+  color: var(--blanco);
   margin: 0;
+}
+/*logo*/
+.logo{
+  margin: 0;
+  border-radius: 70px;
+  height: 10vh;
 }
 /*Section que almacena las etiquetas de los botones*/
 .botones {
@@ -72,28 +81,77 @@ body{
   margin-left: 10px;
   text-decoration: none;
   padding: 8px 16px;
-  color: #333;
+  color: var(--azul-fuerte-dark);
+  background-color: var(--azul-flojo-dark);
+  border-radius: 40px;
 }
 
 /*Etiqueta main  del cuerpo de la página*/
 .cuerpo{
   width: 100vw;
   height: 70vh;
+  background-color: var(--azul-intermedio-dark);
 }
 
 /*Section que almacena todas las etiquetas de la parte del generador*/
 .generador{
   display: flex;  
   justify-content: center;
+  padding: 20px;
+}
+/*Imagen candado*/
+.generador_img{
+  border-radius: 100px;
+}
+/*h2 con la clase password_generator*/
+.password_generator{
+  color: var(--blanco);
+  text-align: center;
 }
 /*Subsection que almacena el titulo, la zona de generado y un subsection de los botones*/
 .content{
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+/*Etiqueta donde se generará la contraseña*/
+.password{
+  display: flex;
+  width: 518px;
+  height: 40px;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: var(--blanco);
+  border-radius: 40px;
 }
 /*Subsection de los botones*/
 .botones_pass{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+/*Boton generate*/
+.generate{
+  justify-content: center;
+  align-items: center;
+  background-color: var(--azul-oscuro-dark);
+  color: var(--blanco);
+  padding: 2px 67px;
+  border: none;
+  border-radius: 40px;
+}
+/*Boton Copy*/
+.copy{
+  justify-content: center;
+  align-items: center;
+  background-color: var(--azul-oscuro-dark);
+  color: var(--blanco);
+  padding: 2px 67px;
+  border: none;
+  border-radius: 40px;
 }
 /*Seccion que contiene las etiquetas del apartado que es*/
 .que_es{
@@ -107,7 +165,10 @@ body{
 }
 /*Imagen de la seccion que es*/
 .imagen{
+  display: flex;
   width: 50vw;
+  justify-content: center;
+  align-items: center;
 }
 /*Footer*/
 .pie{
@@ -115,6 +176,7 @@ body{
   height: 20vh;
   display: flex;
   padding: 20px;
+  background-color: var(--azul-oscuro-dark);
 }
 /*Secciones que almacenan las etiquetas de los logos y los nombres de las redes sociales*/
 .redes_sociales,
@@ -123,7 +185,15 @@ body{
   flex-direction: column;
   gap: 10px;
 }
+/*Etiquetas a dentro de la clase iconos*/
+.iconos a{
+  color: var(--azul-claro-dark);
+}
+/*Etiquetas a dentro de la clase redes_sociales*/
+.redes_sociales a{
+  color: var(--azul-claro-dark);
+}
 /*Imagen del logo*/
-.logo{
-  order: -1;
+.logo_footer{
+  border-radius: 70px;
 }
