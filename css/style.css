@@ -129,7 +129,8 @@ body{
 /*Subsection de los botones*/
 .botones_pass{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   align-items: center;
   
 }
@@ -139,9 +140,9 @@ body{
   align-items: center;
   background-color: var(--azul-oscuro-dark);
   color: var(--blanco);
-  padding: 2px 67px;
   border: none;
   border-radius: 40px;
+  width: 25%;
 }
 /*Boton Copy*/
 .copy{
@@ -149,9 +150,9 @@ body{
   align-items: center;
   background-color: var(--azul-oscuro-dark);
   color: var(--blanco);
-  padding: 2px 67px;
   border: none;
   border-radius: 40px;
+  width: 25%;
 }
 /*Seccion que contiene las etiquetas del apartado que es*/
 .que_es{
