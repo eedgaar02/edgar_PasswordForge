@@ -148,7 +148,7 @@ body{
 .copy{
   justify-content: center;
   align-items: center;
-  background-color: var(--azul-oscuro-dark);
+  background-color: var(--azul-flojo-dark);
   color: var(--blanco);
   border: none;
   border-radius: 40px;
@@ -158,18 +158,27 @@ body{
 .que_es{
   display: flex;
   justify-content: center;
+  padding: 40px;
 }
 /*Subseccion que almacena un h2 y una p*/
 .subsection{
   display: flex;
   flex-direction: column;
+  width: 30vw;
+  padding-right: 30px;
+  gap: 10px;
+}
+/*Titulo que es*/
+.titulo{
+  color: var(--blanco);
+}
+/*parrafo*/
+.explicacion{
+  color: var(--blanco);
 }
 /*Imagen de la seccion que es*/
-.imagen{
-  display: flex;
-  width: 50vw;
-  justify-content: center;
-  align-items: center;
+.forge{
+  width: 20%;
 }
 /*Footer*/
 .pie{
@@ -178,6 +187,13 @@ body{
   display: flex;
   padding: 20px;
   background-color: var(--azul-oscuro-dark);
+}
+/*Imagen del footer*/
+.imagen{
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
 }
 /*Secciones que almacenan las etiquetas de los logos y los nombres de las redes sociales*/
 .redes_sociales,
