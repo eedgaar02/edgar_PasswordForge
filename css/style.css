@@ -179,6 +179,7 @@ body{
 /*Imagen de la seccion que es*/
 .forge{
   width: 20%;
+  border-radius: 20px;
 }
 /*Footer*/
 .pie{
