@@ -69,10 +69,12 @@ body{
   margin: 0;
   border-radius: 70px;
   height: 10vh;
+  justify-content: center;
 }
 /*Section que almacena las etiquetas de los botones*/
 .botones {
   display: flex;
+  justify-content: center;
 }
 
 /*Boton de log in y register*/
@@ -205,11 +207,15 @@ body{
 }
 /*Etiquetas a dentro de la clase iconos*/
 .iconos a{
-  color: var(--azul-claro-dark);
+  display: flex;
+  justify-content: end;
 }
 /*Etiquetas a dentro de la clase redes_sociales*/
 .redes_sociales a{
-  color: var(--azul-claro-dark);
+  color: var(--azul-flojo-dark);
+  text-decoration: none;
+  text-align: center;
+  padding-left: 20px;
 }
 /*Imagen del logo*/
 .logo_footer{
