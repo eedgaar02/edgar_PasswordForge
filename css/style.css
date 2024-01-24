@@ -234,6 +234,13 @@ body{
   display: flex;
 }
 /*Formulario*/
-.fromulario{
+.formulario{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.formulario input{
+  display: flex;
+  flex-direction: column;
 }
