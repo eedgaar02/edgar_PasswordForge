@@ -228,12 +228,13 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 70vh;
 }
 /*ImagenCandado*/
 .login_candado{
   display: flex;
+  border-radius: 100px;
+  width: 10vw;
 }
 /*Formulario*/
 .formulario{
@@ -242,16 +243,33 @@ body{
   align-items: center;
   gap: 20px;
 }
+/*Etiqueta form en la clase formulario*/
 .formulario form{
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+/*Inputs de la clase formulario*/
 .formulario input{
   border-radius: 40px;
   padding: 10px;
 }
-.enviar{
+/*Titulo del formulario*/
+.formulario h1{
+  color: var(--blanco);
+}
+/*Boton submit*/
+.inicioSesion{
   background-color: var(--azul-oscuro-dark);
   color: var(--blanco);
+  cursor: pointer;
+}
+
+/*Register*/
+.register{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
