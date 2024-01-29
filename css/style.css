@@ -229,6 +229,8 @@ body{
   justify-content: center;
   align-items: center;
   height: 70vh;
+  visibility: hidden;
+  opacity: 0;
 }
 /*ImagenCandado*/
 .login_candado{
@@ -274,4 +276,6 @@ body{
   align-items: center;
   height: 70vh;
   padding-top: 20px;
+  visibility: hidden;
+  opacity: 0;
 }
