@@ -232,12 +232,7 @@ body{
   visibility: hidden;
   opacity: 0;
 }
-/*ImagenCandado*/
-.login_candado{
-  display: flex;
-  border-radius: 100px;
-  width: 5vw;
-}
+
 /*Formulario*/
 .formulario{
   display: flex;
@@ -245,6 +240,17 @@ body{
   align-items: center;
   gap: 20px;
   padding-bottom: 20px;
+}
+/*Register*/
+.register{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  padding-top: 20px;
+  visibility: hidden;
+  opacity: 0;
 }
 /*Etiqueta form en la clase formulario*/
 .formulario form{
@@ -266,16 +272,4 @@ body{
   background-color: var(--azul-oscuro-dark);
   color: var(--blanco);
   cursor: pointer;
-}
-
-/*Register*/
-.register{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  padding-top: 20px;
-  visibility: hidden;
-  opacity: 0;
 }
