@@ -43,10 +43,19 @@
 html{
   font-family: "Luxurious Roman";
 }
+
 body{
   width: 100vw;
   height: 100vh;
   margin: 0;
+}
+
+/*Etiqueta contenedor padre*/
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  
 }
 
 /*Etiqueta header*/
@@ -224,13 +233,15 @@ body{
 
 /*Log In*/
 .login{
+  position: absolute;
   display: none;
-  flex-direction: column;
-  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
-  height: 70vh;
-  visibility: hidden;
-  opacity: 0;
+  justify-content: center;
+  background-color: hsl(0, 1%, 30%,50%);
 }
 
 /*Formulario*/
@@ -239,18 +250,39 @@ body{
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding-bottom: 20px;
+  padding: 40px;
+  width: 30vw;
+  background-color: #234d46;
+  border-radius: 10px;
 }
 /*Register*/
 .register{
+  position: absolute;
   display: none;
-  flex-direction: column;
-  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
-  height: 70vh;
-  padding-top: 20px;
-  visibility: hidden;
-  opacity: 0;
+  justify-content: center;
+  background-color: hsl(0, 1%, 30%,50%);
+
+}
+
+/*Etiqeuta capsula popup*/
+.h-register {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/*Etiqueta botón cerrar popup*/
+.x-button {
+  grid-column-start: 4;
+  height: 40px;
+  width: 40px;
+  background-color: black;
 }
 /*Etiqueta form en la clase formulario*/
 .formulario form{
@@ -265,6 +297,8 @@ body{
 }
 /*Titulo del formulario*/
 .formulario h1{
+  grid-column-start:2 ;
+  grid-column-end:4 ;
   color: var(--blanco);
 }
 /*Boton submit*/

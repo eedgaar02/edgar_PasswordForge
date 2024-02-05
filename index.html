@@ -83,13 +83,17 @@
           </section>
           <img class="forge" src="img/desktop/Forja.webp" alt="Forja">
         </section>
-        <!--Final de la seccion de que es Password Forge-->
+        
+      </main>
+      <!--Final de la seccion de que es Password Forge-->
 
         <!--Seccion Pop Up register-->
         <section class="register" id="register">
           <section class="formulario">
+            <div class="h-register">
             <h1>Register</h1>
-
+            <div onclick="hideRegister()" class="x-button"></div>
+          </div>
             <form action="">
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 <input type="text" name="apellido" id="apellidos" placeholder="Apellidos">
@@ -106,7 +110,10 @@
         <!--Seccion Pop Up Log in-->
         <section class="login" id="login">
           <section class="formulario">
+            <div class="h-register">
             <h1>Log In</h1>
+            <div onclick="hideLogin()" class="x-button"></div>
+          </div>
             <form action="">
               <input type="email" name="email" id="email" class="email" placeholder="email">
               <input type="password" name="contraseña" id="contraseña" placeholder="contraseña">
@@ -115,7 +122,6 @@
           </section>
         </section>
         <!--Final Pop Up Log in-->
-      </main>
       <!-- Footer (final de la página, zona inferior) -->
       <footer class="pie">
         <section class="imagen">
