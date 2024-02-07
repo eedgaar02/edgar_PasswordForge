@@ -1,4 +1,5 @@
 var validado = false;
+let generaciones = 5;
 
 function overlayRegister(){
     let registro = document.getElementById("register");
@@ -34,14 +35,40 @@ function validarRegister(){
         errores.innerHTML = "La contraseña debe poseer al menos una mayuscula, un numero minimo y tiene que tener una longitud entre 8 y 16 caracteres"
     }if(contraConf != contraseña){
         errores.innerHTML = "La confirmacion de la contraseña no coincide con la contraseña"
-    }
-    
+    }else{
+        validado = true;
+    }    
 }
 function generarContraseña(){
-    if(validado){
+    let password = document.getElementById("password");
 
-    }if(!validado){
+    if(validado === true){
+        const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=<>?";
+        let contrasena = "";
+      
+        for (let i = 0; i < 8; i++) {
+          const caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+          contrasena += caracterAleatorio;
+        }
+      
+        password.innerHTML = contrasena;
 
+    }
+
+    if(validado === false && generaciones > 0){
+        const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=<>?";
+        let contrasena = "";
+      
+        for (let i = 0; i < 8; i++) {
+          const caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+          contrasena += caracterAleatorio;
+        }
+      
+        password.innerHTML = contrasena;
+        generaciones --;
+
+    }if(generaciones === 0){
+        alert("Debes registrarte o iniciar sesion para poder seguir generando.")
     }
 
 }

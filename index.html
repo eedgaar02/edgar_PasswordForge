@@ -62,10 +62,10 @@
           <!--Subseccion para el titlo y la password generada-->
           <section class="content">
             <h2 class="password_generator">Password Generator</h2>
-            <p class="password"></p>
+            <p class="password" id="password"></p>
             <!--Subseccion para los botones-->
             <section class="botones_pass">
-              <button class="generate">Generate</button>
+              <button class="generate" onclick="generarContraseña()">Generate</button>
               <button class="copy">Copy</button>
             </section>
           </section>
@@ -94,14 +94,14 @@
             <h1>Register</h1>
             <div onclick="hideRegister()" class="x-button"></div>
           </div>
-            <form action="">
+            <form onsubmit="validarRegister()" novalidate>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 <input type="text" name="apellido" id="apellidos" placeholder="Apellidos">
                 <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario">
                 <input type="email" name="email" id="email" class="email" placeholder="Email">
                 <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
                 <input type="password" name="contraseñaConf" id="contraseñaConf" placeholder="Confirmacion Contraseña">
-                <span class="errores"></span>
+                <span id="errores"></span>
                 <input type="submit" value="Inciar Sesion" class="inicioSesion">
             </form>
           </section>
