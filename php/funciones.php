@@ -5,6 +5,7 @@
     $emailLogIn = $_POST["emailLogIn"];
     $contraseñaLogIn = $_POST["contraseñaLogIn"];
     
+    //Validar Registro
     function validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf){
         global $connector;
 
@@ -20,7 +21,7 @@
         }elseif($sentencia->num_rows > 0){
             return false;
         }else{
-            $query = "INSERT INTO usuarios (nombre, email, contraseña) VALUES ('$nombre', '$email', '$contraseña')";
+            $query = "INSERT INTO usuarios (nombre, email, contraseña) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
             if ($connector->query($query) === TRUE) {
                 return true;
             } else {
@@ -30,6 +31,7 @@
         }
     }
 
+    //Procesar registro
     if (isset($_POST['registro'])) {
         $nombre = $_POST["nombre"];
         $apellidos = $_POST["apellido"];
@@ -45,5 +47,7 @@
             echo "Error en el registro";
         }
     }
+
+    //Validar Inicio de sesion
 
 
