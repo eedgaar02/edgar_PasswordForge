@@ -5,15 +5,8 @@
     $emailLogIn = $_POST["emailLogIn"];
     $contraseñaLogIn = $_POST["contraseñaLogIn"];
     
-    function validarRegisterPhp(){
+    function validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf){
         global $connector;
-
-        $nombre = $_POST["nombre"];
-        $apellidos = $_POST["apellido"];
-        $usuario = $_POST["usuario"];
-        $email = $_POST["email"];
-        $contraseña = $_POST["contraseña"];
-        $contraConf = $_POST["contraseñaConf"];
 
         $query = "SELECT * FROM usuarios WHERE email='$email'";
         $sentencia = mysqli_query($connector, $query);
@@ -36,4 +29,21 @@
             }
         }
     }
+
+    if (isset($_POST['registro'])) {
+        $nombre = $_POST["nombre"];
+        $apellidos = $_POST["apellido"];
+        $usuario = $_POST["usuario"];
+        $email = $_POST["email"];
+        $contraseña = $_POST["contraseña"];
+        $contraConf = $_POST["contraseñaConf"];
+    
+        if (validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf)) {
+            header("Location: inicio.html");
+            exit();
+        } else {
+            echo "Error en el registro";
+        }
+    }
+
 
