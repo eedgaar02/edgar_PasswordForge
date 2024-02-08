@@ -70,5 +70,4 @@ function generarContraseña(){
     }if(generaciones === 0){
         alert("Debes registrarte o iniciar sesion para poder seguir generando.")
     }
-
 }
