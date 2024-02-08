@@ -22,7 +22,8 @@
             return false;
         }else{
             $query = "INSERT INTO usuarios (nombre, email, contraseña) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
-            if ($connector->query($query) === TRUE) {
+            $sentencia2 = mysqli_query($connector, $query);
+            if ($sentencia2 === TRUE) {
                 return true;
             } else {
                 echo "Error: " . $query . "<br>" . $connector->error;
@@ -49,5 +50,29 @@
     }
 
     //Validar Inicio de sesion
+    function validarLoginPhp($emailLogIn, $contraseñaLogIn){
+        global $connector;
+
+        $query = "SELECT * FROM usuarios WHERE email='$emailLogIn' AND password='$contraseñaLogIn'";
+        $sentencia = mysqli_query($connector, $query);
+
+        if($sentencia->num_rows > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    // Procesar el formulario de login
+    if (isset($_POST['login'])) {
+        $emailLogIn = $_POST['emailLogIn'];
+        $contraseñaLogIn = $_POST['contraseñaLogIn'];
+
+        if (validarLoginPhp($emailLogIn, $contraseñaLogIn)) {
+            header("Location: inicio.html");
+            exit();
+        } else {
+            echo "Error en el login";
+        }
+    }
 
 
