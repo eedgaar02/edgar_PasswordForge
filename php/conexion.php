@@ -6,6 +6,6 @@
 
     $connector = mysqli_connect($user, $password, $host, $bbdd);
 
-    if(!$connector){
-        echo("Error al conectar a la base de datos.");
+    if ($connector->connect_error) {
+        die("Error de conexión: " . $connector->connect_error);
     }

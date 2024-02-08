@@ -27,13 +27,13 @@
         }elseif($sentencia->num_rows > 0){
             return false;
         }else{
-        $query = "INSERT INTO usuarios (nombre, email, contraseña) VALUES ('$nombre', '$email', '$contraseña')";
-        if ($connector->query($query) === TRUE) {
-            return true;
-        } else {
-            echo "Error: " . $query . "<br>" . $connector->error;
-            return false;
-        }
+            $query = "INSERT INTO usuarios (nombre, email, contraseña) VALUES ('$nombre', '$email', '$contraseña')";
+            if ($connector->query($query) === TRUE) {
+                return true;
+            } else {
+                echo "Error: " . $query . "<br>" . $connector->error;
+                return false;
+            }
         }
     }
 
