@@ -12,16 +12,18 @@
         $query = "SELECT * FROM usuarios WHERE email='$email'";
         $sentencia = mysqli_query($connector, $query);
 
+        $patron = "/^(?=.*[A-Z])(?=.*\d).{8,16}$/";
+
         if(empty($nombre) || empty($apellidos) || empty($usuario) || empty($email) || empty($contraseña) || empty($contraConf)){
             return false;
-        }elseif($contraseña != "^(?=.*[A-Z])(?=.*\d).{8,16}$"){
+        }elseif(preg_match($patron, $contraseña)){
             return false;
         }elseif($contraseña != $contraConf){
             return false;
         }elseif($sentencia->num_rows > 0){
             return false;
         }else{
-            $query = "INSERT INTO usuarios (nombre, email, contraseña) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
+            $query = "INSERT INTO usuarios (nombre, apellidos, usuario, email, contraseña) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
             $sentencia2 = mysqli_query($connector, $query);
             if ($sentencia2 === TRUE) {
                 return true;
