@@ -51,7 +51,7 @@
     function validarLoginPhp($emailLogIn, $contraseñaLogIn){
         global $connector;
 
-        $query = "SELECT * FROM usuarios WHERE email='$emailLogIn' AND contraseña='$contraseñaLogIn'";
+        $query = "SELECT * FROM usuario WHERE email='$emailLogIn' AND contrasena='$contraseñaLogIn'";
         $sentencia = mysqli_query($connector, $query);
 
         if($sentencia->num_rows > 0){
@@ -66,7 +66,7 @@
         $contraseñaLogIn = $_POST['contraseñaLogIn'];
 
         if (validarLoginPhp($emailLogIn, $contraseñaLogIn)) {
-            header("Location: inicio.html");
+            header("Location: ../inicio.html");
             exit();
         } else {
             echo "Error en el login";
