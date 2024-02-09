@@ -1,15 +1,11 @@
 <?php
     include("conexion.php");
 
-    
-    $emailLogIn = $_POST["emailLogIn"];
-    $contraseñaLogIn = $_POST["contraseñaLogIn"];
-    
     //Validar Registro
     function validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf){
         global $connector;
 
-        $query = "SELECT * FROM usuarios WHERE email='$email'";
+        $query = "SELECT * FROM usuario WHERE email='$email'";
         $sentencia = mysqli_query($connector, $query);
 
         $patron = "/^(?=.*[A-Z])(?=.*\d).{8,16}$/";
@@ -23,7 +19,7 @@
         }elseif($sentencia->num_rows > 0){
             return false;
         }else{
-            $query = "INSERT INTO usuarios (nombre, apellidos, usuario, email, contraseña) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
+            $query = "INSERT INTO usuario (nombre, apellidos, usuario, email, contraseña) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
             $sentencia2 = mysqli_query($connector, $query);
             if ($sentencia2 === TRUE) {
                 return true;
