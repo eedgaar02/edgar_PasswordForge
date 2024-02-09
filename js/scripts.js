@@ -27,16 +27,22 @@ function validarRegister(){
     let contraseña = document.getElementById("contraseña").value;
     let contraConf = document.getElementById("contraseñaConf").value;
 
+    let patron = /^(?=.*[A-Z])(?=.*\d).{8,16}$/;
+
     let errores = document.getElementById("errores");
 
     if(nombre === "" || apellidos === "" || usuario === "" || email === "" || contraseña === "" || contraConf === ""){
-        errores.innerHTML = "Te has dejado algun campo sin rellenar"
-    }if(contraseña != "^(?=.*[A-Z])(?=.*\d).{8,16}$"){
-        errores.innerHTML = "La contraseña debe poseer al menos una mayuscula, un numero minimo y tiene que tener una longitud entre 8 y 16 caracteres"
-    }if(contraConf != contraseña){
-        errores.innerHTML = "La confirmacion de la contraseña no coincide con la contraseña"
+        errores.innerHTML = "Te has dejado algun campo sin rellenar";
+        return false;
+    }else if(!patron.test(contraseña)){
+        errores.innerHTML = "La contraseña debe poseer al menos una mayuscula, un numero minimo y tiene que tener una longitud entre 8 y 16 caracteres";
+        return false;
+    }else if(contraConf != contraseña){
+        errores.innerHTML = "La confirmacion de la contraseña no coincide con la contraseña";
+        return false;
     }else{
         validado = true;
+        return true;
     }    
 }
 function generarContraseña(){

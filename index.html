@@ -94,7 +94,7 @@
             <h1>Register</h1>
             <div onclick="hideRegister()" class="x-button"></div>
           </div>
-            <form action="php/funciones.php" method="post" onsubmit="validarRegister()" novalidate>
+            <form action="php/funciones.php" method="post" onsubmit="return validarRegister()" novalidate>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 <input type="text" name="apellido" id="apellidos" placeholder="Apellidos">
                 <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario">
