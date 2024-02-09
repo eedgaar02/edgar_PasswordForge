@@ -44,7 +44,7 @@
         $contraConf = $_POST["contraseñaConf"];
     
         if (validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf)) {
-            header("Location: inicio.html");
+            header("Location: ../inicio.html");
             exit();
         } else {
             echo "Error en el registro";
@@ -55,7 +55,7 @@
     function validarLoginPhp($emailLogIn, $contraseñaLogIn){
         global $connector;
 
-        $query = "SELECT * FROM usuarios WHERE email='$emailLogIn' AND password='$contraseñaLogIn'";
+        $query = "SELECT * FROM usuarios WHERE email='$emailLogIn' AND contraseña='$contraseñaLogIn'";
         $sentencia = mysqli_query($connector, $query);
 
         if($sentencia->num_rows > 0){
@@ -65,7 +65,7 @@
         }
     }
     // Procesar el formulario de login
-    if (isset($_POST['login'])) {
+    if (isset($_POST['inicioSesion'])) {
         $emailLogIn = $_POST['emailLogIn'];
         $contraseñaLogIn = $_POST['contraseñaLogIn'];
 
