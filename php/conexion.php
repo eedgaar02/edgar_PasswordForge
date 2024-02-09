@@ -6,6 +6,6 @@
 
     $connector = mysqli_connect($host, $user, $password, $bbdd);
 
-    if ($connector->connect_error) {
-        die("Error de conexión: " . $connector->connect_error);
+    if (!$connector) {
+        die("Error de conexión: " . mysqli_connect_error());
     }

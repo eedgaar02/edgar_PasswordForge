@@ -12,14 +12,14 @@
 
         if(empty($nombre) || empty($apellidos) || empty($usuario) || empty($email) || empty($contraseña) || empty($contraConf)){
             return false;
-        }elseif(preg_match($patron, $contraseña)){
+        }elseif(!preg_match($patron, $contraseña)){
             return false;
         }elseif($contraseña != $contraConf){
             return false;
         }elseif($sentencia->num_rows > 0){
             return false;
         }else{
-            $query = "INSERT INTO usuario (nombre, apellidos, usuario, email, contraseña) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
+            $query = "INSERT INTO usuario (nombre, apellidos, usuario, email, contrasena) VALUES ('$nombre', '$apellidos','$usuario','$email', '$contraseña')";
             $sentencia2 = mysqli_query($connector, $query);
             if ($sentencia2 === TRUE) {
                 return true;
