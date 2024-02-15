@@ -307,3 +307,10 @@ body{
   color: var(--blanco);
   cursor: pointer;
 }
+/*Boton para acceder a la pagina de usuario*/
+.btn__user{
+  width: 5vh;
+  background-color: var(--azul-claro-dark);
+  border-radius: 25px;
+  cursor: pointer;
+}
