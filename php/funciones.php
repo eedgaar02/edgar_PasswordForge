@@ -55,6 +55,10 @@
         $sentencia = mysqli_query($connector, $query);
 
         if($sentencia->num_rows > 0){
+            $fila = mysqli_fetch_assoc($sentencia);
+            $idUsuario = $fila['0'];
+            $expiracion = time() + (1 * 24 * 60 * 60);
+            setcookie("usuarioID", $idUsuario, $expiracion, "/");
             return true;
         }else{
             return false;
@@ -72,5 +76,8 @@
             echo "Error en el login";
         }
     }
+
+    //funcion guardar contraseña
+
 
 

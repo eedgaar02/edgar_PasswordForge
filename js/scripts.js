@@ -73,7 +73,7 @@ function generarContraseña(){
         password.innerHTML = contrasena;
         generaciones --;
 
-    }if(generaciones === 0){
+    }if(validado === false && generaciones === 0){
         alert("Debes registrarte o iniciar sesion para poder seguir generando.")
     }
 }
