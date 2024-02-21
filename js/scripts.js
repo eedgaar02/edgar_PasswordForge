@@ -1,4 +1,8 @@
 var validado = false;
+var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)usuarioID\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+if(parseInt(cookieValue) > 0){
+    var validado = true;
+}
 let generaciones = 5;
 
 function overlayRegister(){
