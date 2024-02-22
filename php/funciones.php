@@ -77,7 +77,43 @@
         }
     }
 
-    //funcion guardar contraseña
-
+    function guardarContraseña($id, $contraGen){
+        global $connector;
+    
+        $query = "INSERT INTO `contrasenas` (`id`, `usuario_id`, `contrasena`) VALUES (NULL, '$id', '$contraGen')";
+        $sentencia = mysqli_query($connector, $query);
+    
+        // Depuración
+        if($sentencia){
+            error_log("Contraseña guardada correctamente");
+            return true;
+        } else {
+            error_log("Error al guardar la contraseña: " . mysqli_error($connector));
+            return false;
+        }
+    }
+    
+    try {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_COOKIE['usuarioID'])) {
+            $idUsuario = intval($_COOKIE['usuarioID']); // Validar y convertir a entero
+            $valor = mysqli_real_escape_string($connector, $_POST["valor"]);
+        
+            // Depuración
+            error_log("ID de usuario: " . $idUsuario);
+            error_log("Valor: " . $valor);
+        
+            if (guardarContraseña($idUsuario, $valor)) {
+                echo "Contraseña guardada correctamente.";
+            } else {
+                http_response_code(500);
+                echo "Error al guardar la contraseña.";
+            }
+        }
+    } catch (Exception $e) {
+        error_log("Excepción: " . $e->getMessage() . "\n" . $e->getTraceAsString());
+        http_response_code(500);
+        echo "Error interno en el servidor: " . $e->getMessage();
+    }
+?>
 
 

@@ -81,3 +81,23 @@ function generarContraseña(){
         alert("Debes registrarte o iniciar sesion para poder seguir generando.")
     }
 }
+function guardarValor() {
+    console.log("guardarValor está siendo llamada.");
+    // Obtener el valor de la etiqueta p
+    var valor = document.getElementById("password").innerText;
+
+    // Enviar el valor al servidor mediante una solicitud AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/funciones.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            console.log("Respuesta del servidor (status: " + xhr.status + "):", xhr.responseText);
+            if (xhr.status == 200) {
+                // Manejar la respuesta del servidor si es necesario
+                console.log(xhr.responseText);
+            }
+        }
+    };
+    xhr.send("valor=" + encodeURIComponent(valor));
+}
