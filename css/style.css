@@ -39,17 +39,16 @@
 
 
 /* ******************************** */
-
+/*html*/
 html{
   font-family: "Luxurious Roman";
 }
-
+/*body*/
 body{
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
-
 /*Etiqueta contenedor padre*/
 #container {
   display: grid;
@@ -57,7 +56,6 @@ body{
   grid-template-rows: 1fr;
   
 }
-
 /*Etiqueta header*/
 .cabecera {
   display: flex;
@@ -85,7 +83,6 @@ body{
   display: flex;
   justify-content: center;
 }
-
 /*Boton de log in y register*/
 .btn_logIn,
 .btn_register {
@@ -96,14 +93,12 @@ body{
   background-color: var(--azul-flojo-dark);
   border-radius: 40px;
 }
-
 /*Etiqueta main  del cuerpo de la página*/
 .cuerpo{
   width: 100vw;
   height: 70vh;
   background-color: var(--azul-intermedio-dark);
 }
-
 /*Section que almacena todas las etiquetas de la parte del generador*/
 .generador{
   display: flex;  
@@ -230,7 +225,6 @@ body{
 .logo_footer{
   border-radius: 40px;
 }
-
 /*Log In*/
 .login{
   position: absolute;
@@ -243,7 +237,6 @@ body{
   justify-content: center;
   background-color: hsl(0, 1%, 30%,50%);
 }
-
 /*Formulario*/
 .formulario{
   display: flex;
@@ -268,7 +261,6 @@ body{
   background-color: hsl(0, 1%, 30%,50%);
 
 }
-
 /*Etiqeuta capsula popup*/
 .h-register {
   display: grid;
@@ -276,7 +268,6 @@ body{
   width: 100%;
   justify-content: space-around;
 }
-
 /*Etiqueta botón cerrar popup*/
 .x-button {
   grid-column-start: 4;
@@ -314,3 +305,32 @@ body{
   border-radius: 25px;
   cursor: pointer;
 }
+/* Etiqueta que contiene información del usuario */
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  height: 60vh;
+  margin: 20px auto 0;
+  background-color: var(--azul-fuerte-light);
+  border-radius: 40px;
+}
+
+/* Etiquetas section dentro de la clase perfil */
+.perfil section {
+  padding: 5px;
+  background-color: var(--blanco);
+  width: 75%;
+  margin: auto; /* Centrar horizontalmente */
+  text-align: center; /* Centrar el texto dentro de la sección */
+  border-radius: 50px;
+}
+
+/* Etiquetas p dentro de las etiquetas section dentro de la clase perfil */
+.perfil section p {
+  padding: 5px;
+  margin: 0; /* Eliminar el margen por defecto de los párrafos */
+  justify-content: center;
+}
+/*Etiquetas de */
