@@ -1,3 +1,10 @@
+<?php
+      include 'funciones.php';
+      $nombreUsuario = obtenerNombreUsuario();
+      $emailUsuario = obtenerCorreoUsuario();
+      $contrasenaUsuario = obtenerContraUsuario();
+      $contasenasGuardadas = obtenerContrasGuardadas();
+    ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -59,18 +66,25 @@
         <section class="perfil">
             <section>
                 <p>Nombre:</p>
-                <p class="nombreUsuario"></p>
+                <p class="nombreUsuario"><?php echo $nombreUsuario ?></p>
             </section>
             <section>
                 <p>Correo:</p>
-                <p class="correoUsuario"></p>
+                <p class="correoUsuario"><?php echo $emailUsuario ?></p>
             </section>
             <section>
                 <p>Contraseña:</p>
-                <p class="contrasenaUsuario"></p>
+                <p class="contrasenaUsuario"><?php echo $contrasenaUsuario ?></p>
             </section>
             <section class="contrasenasGuardadas">
                 <p>Contraseñas Guardadas:</p>
+                <ul>
+                  <?php
+                    foreach($contasenasGuardadas as $contrasena){
+                        echo "<li>$contrasena</li>";
+                    }
+                  ?>
+                </ul>
             </section>
         </section>
         

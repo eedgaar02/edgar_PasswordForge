@@ -114,6 +114,70 @@
         http_response_code(500);
         echo "Error interno en el servidor: " . $e->getMessage();
     }
+
+    function obtenerNombreUsuario(){
+        if(isset($_COOKIE['usuarioID'])){
+            global $connector;
+            $idUsuario = intval($_COOKIE['usuarioID']);
+            $query = "SELECT usuario FROM `usuario` WHERE id = '$idUsuario';";
+            $sentencia = mysqli_query($connector, $query);
+            if($sentencia){
+                $fila = $sentencia->fetch_assoc();
+                $nomUsuario = $fila['usuario'];
+                return $nomUsuario;
+            }else{
+                return "El usuario no existe";
+            }
+        }
+    }
+    function obtenerCorreoUsuario(){
+        if(isset($_COOKIE['usuarioID'])){
+            global $connector;
+            $idUsuario = intval($_COOKIE['usuarioID']);
+            $query = "SELECT email FROM `usuario` WHERE id = '$idUsuario';";
+            $sentencia = mysqli_query($connector, $query);
+            if($sentencia){
+                $fila = $sentencia->fetch_assoc();
+                $correoUsuario = $fila['email'];
+                return $correoUsuario;
+            }else{
+                return "El usuario no existe";
+            }
+        }
+    }
+    function obtenerContraUsuario(){
+        if(isset($_COOKIE['usuarioID'])){
+            global $connector;
+            $idUsuario = intval($_COOKIE['usuarioID']);
+            $query = "SELECT contrasena FROM `usuario` WHERE id = '$idUsuario';";
+            $sentencia = mysqli_query($connector, $query);
+            if($sentencia){
+                $fila = $sentencia->fetch_assoc();
+                $contraUsuario = $fila['contrasena'];
+                return $contraUsuario;
+            }else{
+                return "El usuario no existe";
+            }
+        }
+    }
+    function obtenerContrasGuardadas(){
+        if(isset($_COOKIE['usuarioID'])){
+            global $connector;
+            $idUsuario = intval($_COOKIE['usuarioID']);
+            $query = "SELECT contrasenas.contrasena FROM contrasenas,usuario WHERE contrasenas.usuario_id = usuario.id && usuario.id = '$idUsuario';";
+            $sentencia = mysqli_query($connector, $query);
+            if($sentencia){
+                $resultado = mysqli_fetch_all($sentencia, MYSQLI_ASSOC);
+                $salida = array();
+                foreach($resultado as $contra){
+                    $salida[] = $contra['contrasena'];
+                }
+                return $salida;
+            }else{
+                return "El usuario no existe";
+            }
+        }
+    }
 ?>
 
 
