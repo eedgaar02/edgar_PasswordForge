@@ -76,7 +76,7 @@
             echo "Error en el login";
         }
     }
-
+    // Funcion para guardar contraseña
     function guardarContraseña($id, $contraGen){
         global $connector;
     
@@ -92,7 +92,7 @@
             return false;
         }
     }
-    
+    // try catch para obtener el valor de la etiqueta p con la clase password que nos envia la funcion guardarValor() de JavaScript mediante AJAX
     try {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_COOKIE['usuarioID'])) {
             $idUsuario = intval($_COOKIE['usuarioID']); // Validar y convertir a entero
@@ -114,7 +114,7 @@
         http_response_code(500);
         echo "Error interno en el servidor: " . $e->getMessage();
     }
-
+    // Funcion para obtener el nombre de usuario
     function obtenerNombreUsuario(){
         if(isset($_COOKIE['usuarioID'])){
             global $connector;
@@ -130,6 +130,7 @@
             }
         }
     }
+    // Funcion para obtener el correo del usuario
     function obtenerCorreoUsuario(){
         if(isset($_COOKIE['usuarioID'])){
             global $connector;
@@ -145,6 +146,7 @@
             }
         }
     }
+    // Funcion para obtener la contraseña del usuario
     function obtenerContraUsuario(){
         if(isset($_COOKIE['usuarioID'])){
             global $connector;
@@ -160,6 +162,7 @@
             }
         }
     }
+    // Funcion para obtener las contraseñas guardadas
     function obtenerContrasGuardadas(){
         if(isset($_COOKIE['usuarioID'])){
             global $connector;
