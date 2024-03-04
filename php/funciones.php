@@ -30,33 +30,17 @@
         }
     }
 
-    //Procesar registro
-    if (isset($_POST['registro'])) {
-        $nombre = $_POST["nombre"];
-        $apellidos = $_POST["apellido"];
-        $usuario = $_POST["usuario"];
-        $email = $_POST["email"];
-        $contraseña = $_POST["contraseña"];
-        $contraConf = $_POST["contraseñaConf"];
     
-        if (validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf)) {
-            header("Location: ../inicio.html");
-            exit();
-        } else {
-            echo "Error en el registro";
-        }
-    }
-
     //Validar Inicio de sesion
     function validarLoginPhp($emailLogIn, $contraseñaLogIn){
         global $connector;
-
+        
         $query = "SELECT id FROM usuario WHERE email='$emailLogIn' AND contrasena='$contraseñaLogIn'";
         $sentencia = mysqli_query($connector, $query);
-
+        
         if($sentencia->num_rows > 0){
-        $fila = $sentencia->fetch_assoc();
-        $idUsuario = $fila['id'];
+            $fila = $sentencia->fetch_assoc();
+            $idUsuario = $fila['id'];
             $expiracion = time() + (1 * 24 * 60 * 60);
             setcookie("usuarioID", $idUsuario, $expiracion, "/");
             return true;
@@ -64,25 +48,13 @@
             return false;
         }
     }
-    // Procesar el formulario de login
-    if (isset($_POST['inicioSesion'])) {
-        $emailLogIn = $_POST['emailLogIn'];
-        $contraseñaLogIn = $_POST['contraseñaLogIn'];
-
-        if (validarLoginPhp($emailLogIn, $contraseñaLogIn)) {
-            header("Location: ../inicio.html");
-            exit();
-        } else {
-            echo "Error en el login";
-        }
-    }
     // Funcion para guardar contraseña
     function guardarContraseña($id, $contraGen){
         global $connector;
-    
+        
         $query = "INSERT INTO `contrasenas` (`id`, `usuario_id`, `contrasena`) VALUES (NULL, '$id', '$contraGen')";
         $sentencia = mysqli_query($connector, $query);
-    
+        
         // Depuración
         if($sentencia){
             error_log("Contraseña guardada correctamente");
@@ -91,28 +63,6 @@
             error_log("Error al guardar la contraseña: " . mysqli_error($connector));
             return false;
         }
-    }
-    // try catch para obtener el valor de la etiqueta p con la clase password que nos envia la funcion guardarValor() de JavaScript mediante AJAX
-    try {
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_COOKIE['usuarioID'])) {
-            $idUsuario = intval($_COOKIE['usuarioID']); // Validar y convertir a entero
-            $valor = mysqli_real_escape_string($connector, $_POST["valor"]);
-        
-            // Depuración
-            error_log("ID de usuario: " . $idUsuario);
-            error_log("Valor: " . $valor);
-        
-            if (guardarContraseña($idUsuario, $valor)) {
-                echo "Contraseña guardada correctamente.";
-            } else {
-                http_response_code(500);
-                echo "Error al guardar la contraseña.";
-            }
-        }
-    } catch (Exception $e) {
-        error_log("Excepción: " . $e->getMessage() . "\n" . $e->getTraceAsString());
-        http_response_code(500);
-        echo "Error interno en el servidor: " . $e->getMessage();
     }
     // Funcion para obtener el nombre de usuario
     function obtenerNombreUsuario(){
@@ -181,6 +131,54 @@
             }
         }
     }
-?>
-
-
+    //Procesar registro
+    if (isset($_POST['registro'])) {
+        $nombre = $_POST["nombre"];
+        $apellidos = $_POST["apellido"];
+        $usuario = $_POST["usuario"];
+        $email = $_POST["email"];
+        $contraseña = $_POST["contraseña"];
+        $contraConf = $_POST["contraseñaConf"];
+        
+        if (validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf)) {
+            header("Location: ../index.html");
+            exit();
+        } else {
+            echo "Error en el registro";
+        }
+    }
+    // Procesar el formulario de login
+    if (isset($_POST['inicioSesion'])) {
+        $emailLogIn = $_POST['emailLogIn'];
+        $contraseñaLogIn = $_POST['contraseñaLogIn'];
+        
+        if (validarLoginPhp($emailLogIn, $contraseñaLogIn)) {
+            header("Location: ../inicio.html");
+            exit();
+        } else {
+            echo "Error en el login";
+        }
+    }
+    // try catch para obtener el valor de la etiqueta p con la clase password que nos envia la funcion guardarValor() de JavaScript mediante AJAX
+    try {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_COOKIE['usuarioID'])) {
+            $idUsuario = intval($_COOKIE['usuarioID']); // Validar y convertir a entero
+            $valor = mysqli_real_escape_string($connector, $_POST["valor"]);
+            
+            // Depuración
+            error_log("ID de usuario: " . $idUsuario);
+            error_log("Valor: " . $valor);
+            
+            if (guardarContraseña($idUsuario, $valor)) {
+                echo "Contraseña guardada correctamente.";
+            } else {
+                http_response_code(500);
+                echo "Error al guardar la contraseña.";
+            }
+        }
+    } catch (Exception $e) {
+        error_log("Excepción: " . $e->getMessage() . "\n" . $e->getTraceAsString());
+        http_response_code(500);
+        echo "Error interno en el servidor: " . $e->getMessage();
+    }
+    ?>
