@@ -1,5 +1,5 @@
 <?php
-    include("conexion.php");
+    include "conexion.php";
 
     //Validar Registro
     function validarRegisterPhp($nombre, $apellidos, $usuario, $email, $contraseña, $contraConf){
