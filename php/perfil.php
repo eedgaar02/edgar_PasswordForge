@@ -1,9 +1,9 @@
 <?php
       include 'funciones.php';
-      $nombreUsuario = obtenerNombreUsuario();
-      $emailUsuario = obtenerCorreoUsuario();
-      $contrasenaUsuario = obtenerContraUsuario();
-      $contasenasGuardadas = obtenerContrasGuardadas();
+      $nombreUsuario = obtenerNombreUsuario();//obtener nombre de usuario
+      $emailUsuario = obtenerCorreoUsuario();//obtener correo del usuario
+      $contrasenaUsuario = obtenerContraUsuario();//obtener la contraseña del usuario
+      $contasenasGuardadas = obtenerContrasGuardadas();//contraseñas guardadas
     ?>
 <!DOCTYPE html>
 <html lang="es">
